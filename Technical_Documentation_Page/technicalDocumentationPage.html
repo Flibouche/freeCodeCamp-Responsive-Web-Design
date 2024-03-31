@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>Documentation sur Godot</h1>
+        </header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#Introduction">Introduction</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Fonctionnalites">Fonctionnalites</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Rendu">Rendu</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Moteur_de_rendu_2D">Moteur de rendu 2D</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Moteur_de_rendu_3D">Moteur de rendu 3D</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Arbre_de_scene">Arbre de scene</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Langages_de_programmation">Langages de programmation</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#GDScript">GDScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Exemples">Exemples</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#En_savoir_plus">En savoir plus</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+
+        <div class="godot-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Godot_logo.svg">
+        </div>
+
+        <section class="main-section" id="Introduction">
+            <header>
+                <h1>Introduction</h1>
+            </header>
+            <p>Godot est un moteur de jeu multiplateforme, c'est-à-dire un logiciel permettant de créer des jeux vidéo
+                qui est
+                compatible avec différents systèmes d'exploitation. Il comporte entre autres un moteur 2D, un moteur 3D,
+                un
+                moteur physique, un gestionnaire d'animations, et des langages de script pour programmer des
+                comportements. Il
+                est depuis janvier 2014 ouvert au public et disponible sous licence MIT, ce qui fait de lui un logiciel
+                libre.
+                En plus des nombreux contributeurs bénévoles qui participent au projet, quelques développeurs rémunérés
+                par don
+                mensuel y travaillent à temps plein. </p>
+        </section>
+
+        <section class="main-section" id="Fonctionnalites">
+            <header>
+                <h2>Fonctionnalites</h2>
+            </header>
+            <p>En tant qu'outil de création de jeux vidéo, Godot couvre de nombreux aspects de leur réalisation.
+                L'utilisateur
+                de Godot a la possibilité d'importer du contenu (images, son, modèles 3D), de créer des animations, de
+                programmer le comportement de différents éléments du jeu grâce à un langage de script, de soumettre des
+                objets à
+                une physique (forces, collisions), de placer des sources de lumière, de créer un niveau constitué de
+                tuiles au
+                sein de l'éditeur, etc. Il permet aussi de distribuer le jeu comme exécutable. </p>
+        </section>
+
+        <section class="main-section" id="Rendu">
+            <header>
+                <h2>Rendu</h2>
+            </header>
+            <p>Godot possède à la fois un moteur de rendu 3D et un moteur de rendu 2D dédiés. Cette approche est
+                différente de
+                certains autres moteurs de jeu tels que Unity, qui manipulent une scène 3D dans tous les cas, et
+                utilisent une
+                caméra orthogonale pour restituer une visualisation de type 2D. </p>
+        </section>
+
+        <section class="main-section" id="Moteur_de_rendu_2D">
+            <header>
+                <h3>Moteur de rendu 2D</h3>
+            </header>
+            <p>Le moteur de rendu 2D de Godot utilise le pixel en tant qu'unité de distance, quitte à utiliser des
+                agrandissements pour obtenir les dimensions d'image voulues sur l'écran. Il est capable de gérer les
+                rendus :
+            </p>
+            <ul>
+                <li>De sprites statiques,</li>
+                <li>D'animations, soit avec des sprites animés (succession d'images), soit par utilisation d'un
+                    squelette
+                    vectoriel,</li>
+                <li>De défilement différentiel (ou parallaxe), technique utilisée pour faire défiler plusieurs plans
+                    d'un décor
+                    à des vitesses différentes pour donner l'illusion de profondeur,</li>
+                <li>D'effets de particules,</li>
+                <li>D'effets de lumière ; les éclairages et les ombres.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Moteur_de_rendu_3D">
+            <header>
+                <h3>Moteur de rendu 3D</h3>
+            </header>
+            <p>Depuis la version 3.0 de Godot, le moteur de rendu 3D utilise la technique du rendu physique réaliste6,7.
+                La
+                fonction de réflectivité bidirectionnelle choisie pour les calculs de lumière respecte tous les
+                principes
+                définis par les studios d'animation Disney8. Le rendu des objets virtuels est alors basé sur le
+                paramétrage des
+                matériaux qui le composent. Il tient compte de leur albédo, leur rugosité, leur caractère métallique,
+                leur
+                occlusion ambiante, leur anisotropie, leur transluminescence, leurs effets de contours et leur
+                réfraction. Godot
+                gère les plateformes supportant les bibliothèques OpenGL et OpenGL ES et l'API Vulkan a été ajoutée avec
+                la
+                sortie de la version 4.0 début 2023.</p>
+        </section>
+
+        <section class="main-section" id="Arbre_de_scene">
+            <header>
+                <h2>Arbre de scene</h2>
+            </header>
+            <p>Le contenu d'un jeu conçu sur Godot est organisé sous la forme d'un arbre de scène. Dans Godot, une scène
+                désigne un ensemble de nœuds organisés en arbre, où les nœuds peuvent être des sprites, des formes
+                servant de
+                masques de collision, des sources lumineuses, des sources sonores, des objets physiques, des
+                gestionnaires
+                d'animation, ou d'autres choses. Par exemple, on peut créer une scène « personnage » composée d'une
+                sprite,
+                d'un objet physique et d'une forme de collision.
+
+                Il est aussi possible de réutiliser une scène, créée au préalable, en tant que nœud d'une autre scène.
+                Ce
+                système permet alors d'imbriquer des scènes les unes dans les autres. Ainsi, on peut construire une
+                scène
+                principale « niveau » qui contient plusieurs scènes « personnage » telles que décrites dans l'exemple
+                précédent, entre autres nœuds.
+
+                Chaque scène est enregistrée sous la forme d'un fichier texte pour faciliter la gestion de versions.
+            </p>
+        </section>
+
+        <section class="main-section" id="Langages_de_programmation">
+            <header>
+                <h2>Langages de programmation</h2>
+            </header>
+            <p>Godot permet d'attacher un script à n'importe quel nœud présent dans l'arbre de scène, afin de programmer
+                le
+                comportement de ce nœud. Différents langages de programmation sont disponibles pour ce faire. </p>
+        </section>
+
+        <section class="main-section" id="GDScript">
+            <header>
+                <h3>GDScript</h3>
+            </header>
+            <p>Le langage de script « GDScript » est un langage conçu spécifiquement pour fonctionner avec Godot. Sa
+                syntaxe
+                est similaire à celle de Python. Plusieurs raisons étaient évoquées pour justifier le choix de créer un
+                nouveau langage, plutôt que d'utiliser Lua, Python, Squirrel ou Javascript avec leurs interprètes. Ces
+                raisons
+                sont: </p>
+            <ul>
+                <li>La relative facilité d'apprentissage de ce nouveau langage,</li>
+                <li>La possibilité de fournir plus facilement un meilleur éditeur de code source dans l'interface
+                    utilisateur
+                    de Godot. En effet, GDScript permet plus aisément le support du complètement et le support de
+                    l'édition de
+                    code pendant le fonctionnement du jeu (Live editing),</li>
+                <li>D'autres raisons plus techniques, comme l'interfaçage plus simple entre ce langage et le C++, la
+                    gestion
+                    plus adaptée du ramasse-miette, la possibilité d'ajouter de manière native dans le langage des types
+                    de
+                    variables telles que les vecteurs et les matrices, ou le support de threads.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Exemples">
+            <header>
+                <h3>Exemples</h3>
+            </header>
+            <p>Voici un exemple sur la syntaxe :</p>
+            <code>
+        # Everything after "#" is a comment.
+# A file is a class!<br>
+
+# (optional) icon to show in the editor dialogs:<br>
+@icon("res://path/to/optional/icon.svg")<br>
+      </code><br>
+            <p>Les classes :</p>
+            <code>
+        # (optional) class definition:<br>
+class_name MyClass<br>
+      </code><br>
+            <p>L'inheritance :</p>
+            <code>
+        # Inheritance:<br>
+extends BaseClass<br>
+      </code>
+            <p>Les variables :</p>
+            <code>
+        # Member variables.<br>
+var a = 5<br>
+var s = "Hello"<br>
+var arr = [1, 2, 3]<br>
+var dict = {"key": "value", 2: 3}<br>
+var other_dict = {key = "value", other_key = 2}<br>
+var typed_var: int<br>
+var inferred_type := "String"<br>
+      </code><br>
+            <p>Les constantes :</p>
+            <code>
+        # Constants.<br>
+const ANSWER = 42<br>
+const THE_NAME = "Charly"<br>
+      </code><br>
+        </section>
+
+        <section class="main-section" id="En_savoir_plus">
+            <header>
+                <h2>En savoir plus</h2>
+            </header>
+            <p>Si vous êtes curieux n'hésitez pas à checker le wiki :</p>
+            <a href="https://fr.wikipedia.org/wiki/Godot_(moteur_de_jeu)">c'est par ici !</a>
+        </section>
+
+    </main>
+</body>
+
+</html>
